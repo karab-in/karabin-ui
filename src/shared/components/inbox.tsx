@@ -16,7 +16,7 @@ import {
   PrivateMessagesResponse,
   PrivateMessageResponse,
   Site,
-} from 'lemmy-js-client';
+} from 'karabin-js-client';
 import { WebSocketService, UserService } from '../services';
 import {
   wsJsonToRes,

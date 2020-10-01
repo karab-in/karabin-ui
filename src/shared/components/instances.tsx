@@ -1,5 +1,5 @@
 import { Component } from 'inferno';
-import { GetSiteResponse } from 'lemmy-js-client';
+import { GetSiteResponse } from 'karabin-js-client';
 import { setIsoData } from '../utils';
 import { i18n } from '../i18next';
 import { HtmlTags } from './html-tags';

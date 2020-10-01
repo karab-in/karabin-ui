@@ -8,7 +8,7 @@ import {
   GetSiteConfigResponse,
   WebSocketJsonResponse,
   GetSiteConfig,
-} from 'lemmy-js-client';
+} from 'karabin-js-client';
 import { WebSocketService } from '../services';
 import {
   wsJsonToRes,

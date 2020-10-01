@@ -44,7 +44,7 @@ import {
   CommentResponse,
   PostResponse,
   LemmyHttp,
-} from 'lemmy-js-client';
+} from 'karabin-js-client';
 
 import { httpUri } from './env';
 

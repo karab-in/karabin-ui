@@ -1,6 +1,6 @@
 import { Component } from 'inferno';
 import { Link } from 'inferno-router';
-import { Post, SortType } from 'lemmy-js-client';
+import { Post, SortType } from 'karabin-js-client';
 import { postSort } from '../utils';
 import { PostListing } from './post-listing';
 import { i18n } from '../i18next';

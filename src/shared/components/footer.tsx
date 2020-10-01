@@ -2,7 +2,7 @@ import { Component } from 'inferno';
 import { Link } from 'inferno-router';
 import { i18n } from '../i18next';
 import { repoUrl } from '../utils';
-import { GetSiteResponse } from 'lemmy-js-client';
+import { GetSiteResponse } from 'karabin-js-client';
 
 interface FooterProps {
   site: GetSiteResponse;

@@ -22,7 +22,7 @@ import {
   GetSiteResponse,
   Category,
   ListCategoriesResponse,
-} from 'lemmy-js-client';
+} from 'karabin-js-client';
 import { UserService, WebSocketService } from '../services';
 import { PostListings } from './post-listings';
 import { CommentNodes } from './comment-nodes';

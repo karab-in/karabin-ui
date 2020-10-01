@@ -1,4 +1,4 @@
-import { GetSiteResponse } from 'lemmy-js-client';
+import { GetSiteResponse } from 'karabin-js-client';
 
 export interface IsoData {
   path: string;

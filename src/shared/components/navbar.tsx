@@ -17,7 +17,7 @@ import {
   PrivateMessage,
   PrivateMessageResponse,
   WebSocketJsonResponse,
-} from 'lemmy-js-client';
+} from 'karabin-js-client';
 import {
   wsJsonToRes,
   pictrsAvatarThumbnail,

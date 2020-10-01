@@ -7,7 +7,7 @@ import {
   WebSocketJsonResponse,
   UserOperation,
   CommentResponse,
-} from 'lemmy-js-client';
+} from 'karabin-js-client';
 import { capitalizeFirstLetter, wsJsonToRes, wsSubscribe } from '../utils';
 import { WebSocketService, UserService } from '../services';
 import { i18n } from '../i18next';

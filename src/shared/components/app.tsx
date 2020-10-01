@@ -7,7 +7,7 @@ import { routes } from '../../shared/routes';
 import { Navbar } from '../../shared/components/navbar';
 import { Footer } from '../../shared/components/footer';
 import { Symbols } from '../../shared/components/symbols';
-import { GetSiteResponse } from 'lemmy-js-client';
+import { GetSiteResponse } from 'karabin-js-client';
 import './styles.scss';
 
 export interface AppProps {

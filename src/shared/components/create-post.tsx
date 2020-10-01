@@ -21,7 +21,7 @@ import {
   Site,
   ListCommunitiesForm,
   SortType,
-} from 'lemmy-js-client';
+} from 'karabin-js-client';
 import { i18n } from '../i18next';
 
 interface CreatePostState {

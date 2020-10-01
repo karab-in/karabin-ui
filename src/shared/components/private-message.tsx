@@ -4,7 +4,7 @@ import {
   DeletePrivateMessageForm,
   MarkPrivateMessageAsReadForm,
   UserView,
-} from 'lemmy-js-client';
+} from 'karabin-js-client';
 import { WebSocketService, UserService } from '../services';
 import { mdToHtml, toast } from '../utils';
 import { MomentTime } from './moment-time';

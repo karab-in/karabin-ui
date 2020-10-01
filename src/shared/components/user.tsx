@@ -16,7 +16,7 @@ import {
   CommentResponse,
   PostResponse,
   BanUserResponse,
-} from 'lemmy-js-client';
+} from 'karabin-js-client';
 import { UserDetailsView } from '../interfaces';
 import { WebSocketService, UserService } from '../services';
 import {

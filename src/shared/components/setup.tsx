@@ -7,7 +7,7 @@ import {
   LoginResponse,
   UserOperation,
   WebSocketJsonResponse,
-} from 'lemmy-js-client';
+} from 'karabin-js-client';
 import { WebSocketService, UserService } from '../services';
 import { wsJsonToRes, toast } from '../utils';
 import { SiteForm } from './site-form';

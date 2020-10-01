@@ -11,7 +11,7 @@ import {
   UserView,
   SortType,
   GetUserDetailsForm,
-} from 'lemmy-js-client';
+} from 'karabin-js-client';
 import {
   getRecipientIdFromProps,
   isBrowser,

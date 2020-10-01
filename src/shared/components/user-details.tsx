@@ -1,6 +1,11 @@
 import { Component, linkEvent } from 'inferno';
 import { i18n } from '../i18next';
-import { Post, Comment, SortType, UserDetailsResponse } from 'lemmy-js-client';
+import {
+  Post,
+  Comment,
+  SortType,
+  UserDetailsResponse,
+} from 'karabin-js-client';
 import { UserDetailsView } from '../interfaces';
 import { commentsToFlatNodes, setupTippy } from '../utils';
 import { PostListing } from './post-listing';

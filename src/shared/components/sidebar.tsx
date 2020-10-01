@@ -9,7 +9,7 @@ import {
   UserView,
   AddModToCommunityForm,
   Category,
-} from 'lemmy-js-client';
+} from 'karabin-js-client';
 import { WebSocketService, UserService } from '../services';
 import { mdToHtml, getUnixTime } from '../utils';
 import { CommunityForm } from './community-form';

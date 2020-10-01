@@ -5809,6 +5809,11 @@ jwt-decode@^3.0.0-beta.2:
   resolved "https://registry.yarnpkg.com/jwt-decode/-/jwt-decode-3.0.0-beta.2.tgz#5d928dd0d582caab47b252a5f12ad1721f2f6eef"
   integrity sha512-AnENY5syz7PzgpTzos9sxkqKTmHU0JeJOXZFHUc41bDyybC2yzZ+1r43ZLhk7+JCwF0yjISPuVK9ZWfA1nCUPA==
 
+karabin-js-client@^1.0.13:
+  version "1.0.12"
+  resolved "https://registry.yarnpkg.com/karabin-js-client/-/karabin-js-client-1.0.12.tgz#090af714af0a5cbff7a78b10ab860dc51fd147ea"
+  integrity sha512-HEDl311AJXu/3eKG126rvboIsOdEsnSLfSbd89d2zC+LGVcoJVJYAO5hSB7J6DJdFKNRqnETmCqD/r2aZ6RtUA==
+
 keyv@^3.0.0:
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/keyv/-/keyv-3.1.0.tgz#ecc228486f69991e49e9476485a5be1e8fc5c4d9"
@@ -5887,11 +5892,6 @@ lcid@^1.0.0:
   integrity sha1-MIrMr6C8SDo4Z7S28rlQYlHRuDU=
   dependencies:
     invert-kv "^1.0.0"
-
-lemmy-js-client@^1.0.13:
-  version "1.0.13"
-  resolved "https://registry.yarnpkg.com/lemmy-js-client/-/lemmy-js-client-1.0.13.tgz#d0e1246129ade295faeec1fb4b2c7397d6947a19"
-  integrity sha512-Xz87cCswi/2pbDdApw9JIy8bDWRFGiGWO6IhehTytOAzf36dr4GYgsjTQTLjBX+s+BNYr8hE0+Sz4g9c+ynoJg==
 
 leven@^3.1.0:
   version "3.1.0"

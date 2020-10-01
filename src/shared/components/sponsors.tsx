@@ -1,5 +1,5 @@
 import { Component } from 'inferno';
-import { Site } from 'lemmy-js-client';
+import { Site } from 'karabin-js-client';
 import { i18n } from '../i18next';
 import { T } from 'inferno-i18next';
 import { repoUrl, isBrowser } from '../utils';

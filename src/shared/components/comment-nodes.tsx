@@ -5,7 +5,7 @@ import {
   CommunityUser,
   UserView,
   SortType,
-} from 'lemmy-js-client';
+} from 'karabin-js-client';
 import { commentSort, commentSortSortType } from '../utils';
 import { CommentNode } from './comment-node';
 

@@ -1,5 +1,5 @@
 import { Component, linkEvent } from 'inferno';
-import { ListingType } from 'lemmy-js-client';
+import { ListingType } from 'karabin-js-client';
 import { UserService } from '../services';
 import { randomStr } from '../utils';
 import { i18n } from '../i18next';

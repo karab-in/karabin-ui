@@ -23,7 +23,7 @@ import {
   AddAdminResponse,
   BanUserResponse,
   WebSocketJsonResponse,
-} from 'lemmy-js-client';
+} from 'karabin-js-client';
 import { DataType } from '../interfaces';
 import { WebSocketService, UserService } from '../services';
 import { PostListings } from './post-listings';

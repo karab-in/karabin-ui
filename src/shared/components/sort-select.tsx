@@ -1,5 +1,5 @@
 import { Component, linkEvent } from 'inferno';
-import { SortType } from 'lemmy-js-client';
+import { SortType } from 'karabin-js-client';
 import { sortingHelpUrl, randomStr } from '../utils';
 import { i18n } from '../i18next';
 

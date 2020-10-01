@@ -17,7 +17,7 @@ import {
   TransferCommunityForm,
   TransferSiteForm,
   SortType,
-} from 'lemmy-js-client';
+} from 'karabin-js-client';
 import { CommentSortType, BanType } from '../interfaces';
 import { WebSocketService, UserService } from '../services';
 import {

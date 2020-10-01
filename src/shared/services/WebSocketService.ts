@@ -57,7 +57,7 @@ import {
   WebSocketJsonResponse,
   CommunityJoinForm,
   PostJoinForm,
-} from 'lemmy-js-client';
+} from 'karabin-js-client';
 import { UserService } from './';
 import { i18n } from '../i18next';
 import { toast, isBrowser } from '../utils';

@@ -9,7 +9,7 @@ import {
   UserView,
   UserOperation,
   WebSocketJsonResponse,
-} from 'lemmy-js-client';
+} from 'karabin-js-client';
 import { WebSocketService } from '../services';
 import {
   capitalizeFirstLetter,

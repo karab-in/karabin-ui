@@ -17,7 +17,7 @@ import {
   AddAdminForm,
   TransferSiteForm,
   TransferCommunityForm,
-} from 'lemmy-js-client';
+} from 'karabin-js-client';
 import { BanType } from '../interfaces';
 import { MomentTime } from './moment-time';
 import { PostForm } from './post-form';

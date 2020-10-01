@@ -9,7 +9,7 @@ import {
   Site,
   ListCategoriesResponse,
   Category,
-} from 'lemmy-js-client';
+} from 'karabin-js-client';
 import {
   setIsoData,
   toast,

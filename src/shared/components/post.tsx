@@ -24,7 +24,7 @@ import {
   WebSocketJsonResponse,
   ListCategoriesResponse,
   Category,
-} from 'lemmy-js-client';
+} from 'karabin-js-client';
 import { CommentSortType, CommentViewType } from '../interfaces';
 import { WebSocketService, UserService } from '../services';
 import {

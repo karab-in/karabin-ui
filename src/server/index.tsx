@@ -10,7 +10,7 @@ import { IsoData } from '../shared/interfaces';
 import { routes } from '../shared/routes';
 import IsomorphicCookie from 'isomorphic-cookie';
 import { lemmyHttp, setAuth } from '../shared/utils';
-import { GetSiteForm, GetSiteResponse } from 'lemmy-js-client';
+import { GetSiteForm, GetSiteResponse } from 'karabin-js-client';
 import process from 'process';
 import { Helmet } from 'inferno-helmet';
 
