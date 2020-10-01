@@ -14,7 +14,7 @@ COPY generate_translations.js \
   tsconfig.json \
   webpack.config.js \
   .babelrc \
-  .
+  ./
 COPY karabin-translations karabin-translations
 COPY src src
 
