@@ -1,4 +1,4 @@
-[submodule "lemmy-translations"]
-	path = lemmy-translations
-	url = https://github.com/lemmynet/lemmy-translations
+[submodule "karabin-translations"]
+	path = karabin-translations
+	url = https://github.com/karab-in/karabin-translations
 	branch = main
