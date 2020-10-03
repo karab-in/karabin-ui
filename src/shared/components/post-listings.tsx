@@ -22,10 +22,10 @@ export class PostListings extends Component<PostListingsProps, any> {
 
   render() {
     return (
-      <div>
+      <div className="karabin-content">
         {this.props.posts.length > 0 ? (
           this.outer().map(post => (
-            <>
+            <div className="karabin-row">
               <PostListing
                 post={post}
                 showCommunity={this.props.showCommunity}
@@ -33,7 +33,7 @@ export class PostListings extends Component<PostListingsProps, any> {
                 enableNsfw={this.props.enableNsfw}
               />
               <hr class="my-3" />
-            </>
+            </div>
           ))
         ) : (
           <>

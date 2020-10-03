@@ -88,8 +88,8 @@ export class UserDetails extends Component<UserDetailsProps, UserDetailsState> {
     return (
       <div>
         {combined.map(i => (
-          <>
-            <div>
+          <div className="karabin-content">
+            <div className="karabin-row">
               {i.type === 'posts' ? (
                 <PostListing
                   key={(i.data as Post).id}
@@ -113,7 +113,7 @@ export class UserDetails extends Component<UserDetailsProps, UserDetailsState> {
               )}
             </div>
             <hr class="my-3" />
-          </>
+          </div>
         ))}
       </div>
     );

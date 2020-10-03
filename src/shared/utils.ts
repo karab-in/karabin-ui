@@ -131,6 +131,7 @@ export const themes = [
   'vaporwave-dark',
   'i386',
   'litely',
+  'karabin',
 ];
 
 const DEFAULT_ALPHABET =
@@ -369,7 +370,8 @@ export function getLanguage(override?: string): string {
 
 // TODO
 export function getBrowserLanguage(): string {
-  return navigator.language;
+  // return navigator.language;
+  return 'pl';
 }
 
 export function getMomentLanguage(): string {
@@ -431,7 +433,7 @@ export function getMomentLanguage(): string {
   } else if (lang.startsWith('ko')) {
     lang = 'ko';
   } else {
-    lang = 'en';
+    lang = 'pl';
   }
   return lang;
 }
@@ -440,7 +442,7 @@ export function setTheme(theme: string, forceReload: boolean = false) {
   if (isBrowser() && (theme !== 'browser' || forceReload)) {
     // This is only run on a force reload
     if (theme == 'browser') {
-      theme = 'darkly';
+      theme = 'karabin';
     }
 
     // Unload all the other themes
@@ -451,12 +453,12 @@ export function setTheme(theme: string, forceReload: boolean = false) {
       }
     }
 
-    document
-      .getElementById('default-light')
-      .setAttribute('disabled', 'disabled');
-    document
-      .getElementById('default-dark')
-      .setAttribute('disabled', 'disabled');
+    // document
+    //   .getElementById('default-light')
+    //   .setAttribute('disabled', 'disabled');
+    // document
+    //   .getElementById('default-dark')
+    //   .setAttribute('disabled', 'disabled');
 
     // Load the theme dynamically
     let cssLoc = `/static/assets/css/themes/${theme}.min.css`;

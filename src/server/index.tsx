@@ -45,11 +45,11 @@ server.get('/*', async (req, res) => {
 
   let acceptLang = req.headers['accept-language']
     ? req.headers['accept-language'].split(',')[0]
-    : 'en';
+    : 'pl';
   let lang = !!site.my_user
     ? site.my_user.lang == 'browser'
       ? acceptLang
-      : 'en'
+      : 'pl'
     : acceptLang;
 
   let isoData: IsoData = {
@@ -95,8 +95,8 @@ server.get('/*', async (req, res) => {
 
            <!-- Styles -->
            <link rel="stylesheet" type="text/css" href="/static/styles/styles.css" />
-           <link rel="stylesheet" type="text/css" href="/static/assets/css/themes/litely.min.css" id="default-light" media="(prefers-color-scheme: light)" />
-           <link rel="stylesheet" type="text/css" href="/static/assets/css/themes/darkly.min.css" id="default-dark" media="(prefers-color-scheme: no-preference), (prefers-color-scheme: dark)" />
+<!--           <link rel="stylesheet" type="text/css" href="/static/assets/css/themes/litely.min.css" id="default-light" media="(prefers-color-scheme: light)" />-->
+           <link rel="stylesheet" type="text/css" href="/static/assets/css/themes/darkly.min.css" id="default-dark" media="(prefers-color-scheme: no-preference), (prefers-color-scheme: dark), (prefers-color-scheme: light)" />
            </head>
 
            <body ${helmet.bodyAttributes.toString()}>

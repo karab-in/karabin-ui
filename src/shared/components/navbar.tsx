@@ -258,6 +258,7 @@ export class Navbar extends Component<NavbarProps, NavbarState> {
                   {i18n.t('create_community')}
                 </Link>
               </li>
+              {/*
               <li className="nav-item">
                 <Link
                   className="nav-link"
@@ -269,6 +270,7 @@ export class Navbar extends Component<NavbarProps, NavbarState> {
                   </svg>
                 </Link>
               </li>
+              */}
             </ul>
             <ul class="navbar-nav my-2">
               {this.canAdmin && (
