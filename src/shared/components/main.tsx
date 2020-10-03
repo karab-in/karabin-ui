@@ -495,41 +495,36 @@ export class Main extends Component<any, MainState> {
 
   landing() {
     return (
-      <>
-        <h5>
-          {i18n.t('powered_by')}
-          <svg class="icon mx-2">
-            <use xlinkHref="#icon-mouse">#</use>
-          </svg>
-          <a href={repoUrl}>
-            Lemmy<sup>beta</sup>
-          </a>
+      <div class="">
+        <h5 class="text-center mb-4">
+          <span class="font-weight-bold">Karabin</span>
+          <sup class="ml-1">io</sup>
         </h5>
-        <p class="mb-0">
-          <T i18nKey="landing_0">
-            #
-            <a href="https://en.wikipedia.org/wiki/Social_network_aggregation">
-              #
-            </a>
+        <p class="mb-4 small">
+          <T i18nKey="landing_3">
+            #<a href="https://github.com/karab-in/karabin">#</a>
             <a href="https://en.wikipedia.org/wiki/Fediverse">#</a>
-            <br class="big"></br>
+            <br></br>
             <code>#</code>
             <br></br>
             <b>#</b>
-            <br class="big"></br>
+            <br></br>
             <a href={repoUrl}>#</a>
-            <br class="big"></br>
+            <br></br>
             <a href="https://www.rust-lang.org">#</a>
             <a href="https://actix.rs/">#</a>
             <a href="https://infernojs.org">#</a>
             <a href="https://www.typescriptlang.org/">#</a>
-            <br class="big"></br>
-            <a href="https://github.com/LemmyNet/lemmy/graphs/contributors?type=a">
-              #
-            </a>
+            <a href="https://karab.in">#</a>
           </T>
         </p>
-      </>
+        <p class="mb-0 small">
+          <T i18nKey="landing_1">
+            <strong>#</strong>
+            <a href="https://board.karab.in">#</a>
+          </T>
+        </p>
+      </div>
     );
   }
 

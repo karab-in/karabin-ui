@@ -79,10 +79,12 @@ export class Sponsors extends Component<any, SponsorsState> {
           path={this.context.router.route.match.url}
         />
         {this.topMessage()}
+        {/*
         <hr />
         {this.sponsors()}
         <hr />
         {this.bitcoin()}
+        */}
       </div>
     );
   }

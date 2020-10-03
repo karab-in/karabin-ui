@@ -23,6 +23,16 @@ export class Footer extends Component<FooterProps, FooterState> {
             <li class="nav-item">
               <span class="navbar-text">{this.props.site.version}</span>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                Regulamin
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                Polityka prywatności
+              </a>
+            </li>
             <li className="nav-item">
               <Link className="nav-link" to="/modlog">
                 {i18n.t('modlog')}
@@ -33,21 +43,31 @@ export class Footer extends Component<FooterProps, FooterState> {
                 {i18n.t('instances')}
               </Link>
             </li>
+            {/*
             <li class="nav-item">
               <a className="nav-link" href={'/docs/index.html'}>
                 {i18n.t('docs')}
               </a>
             </li>
+            */}
             <li class="nav-item">
-              <Link className="nav-link" to="/sponsors">
-                {i18n.t('donate')}
+              <Link
+                className="nav-link"
+                to="/sponsors"
+                title={i18n.t('donate_to_lemmy')}
+              >
+                <svg class="icon">
+                  <use xlinkHref="#icon-coffee"></use>
+                </svg>
               </Link>
             </li>
+            {/*
             <li class="nav-item">
               <a className="nav-link" href={repoUrl}>
                 {i18n.t('code')}
               </a>
             </li>
+            */}
           </ul>
         </div>
       </nav>
