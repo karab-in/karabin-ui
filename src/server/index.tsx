@@ -96,7 +96,7 @@ server.get('/*', async (req, res) => {
            <!-- Styles -->
            <link rel="stylesheet" type="text/css" href="/static/styles/styles.css" />
 <!--           <link rel="stylesheet" type="text/css" href="/static/assets/css/themes/litely.min.css" id="default-light" media="(prefers-color-scheme: light)" />-->
-           <link rel="stylesheet" type="text/css" href="/static/assets/css/themes/darkly.min.css" id="default-dark" media="(prefers-color-scheme: no-preference), (prefers-color-scheme: dark), (prefers-color-scheme: light)" />
+           <link rel="stylesheet" type="text/css" href="/static/assets/css/themes/karabin.min.css" id="default-dark" media="(prefers-color-scheme: no-preference), (prefers-color-scheme: dark), (prefers-color-scheme: light)" />
            <style>
               .navbar-brand {
                 background-image: url(/static/assets/karabin.png);
