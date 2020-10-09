@@ -150,8 +150,8 @@ export class Modlog extends Component<any, ModlogState> {
               {i.type_ == 'removed_posts' && (
                 <>
                   {(i.data as ModRemovePost).removed
-                    ? 'Usunięty'
-                    : 'Przywrócony'}
+                    ? 'Usunięto'
+                    : 'Przywrócono'}
                   <span>
                     {' '}
                     Post{' '}
@@ -168,8 +168,8 @@ export class Modlog extends Component<any, ModlogState> {
               {i.type_ == 'locked_posts' && (
                 <>
                   {(i.data as ModLockPost).locked
-                    ? 'Zablokowany'
-                    : 'Odblokowany'}
+                    ? 'Zablokowano'
+                    : 'Odblokowano'}
                   <span>
                     {' '}
                     Post{' '}
@@ -181,7 +181,7 @@ export class Modlog extends Component<any, ModlogState> {
               )}
               {i.type_ == 'stickied_posts' && (
                 <>
-                  {(i.data as ModStickyPost).stickied ? 'Przypięty' : 'Odpięty'}
+                  {(i.data as ModStickyPost).stickied ? 'Przypięto' : 'Odpięto'}
                   <span>
                     {' '}
                     Post{' '}
@@ -194,8 +194,8 @@ export class Modlog extends Component<any, ModlogState> {
               {i.type_ == 'removed_comments' && (
                 <>
                   {(i.data as ModRemoveComment).removed
-                    ? 'Usunięty'
-                    : 'Przywrócony'}
+                    ? 'Usunięto'
+                    : 'Przywrócono'}
                   <span>
                     {' '}
                     Komentarz{' '}
@@ -227,8 +227,8 @@ export class Modlog extends Component<any, ModlogState> {
               {i.type_ == 'removed_communities' && (
                 <>
                   {(i.data as ModRemoveCommunity).removed
-                    ? 'Usunięta'
-                    : 'Przywrócona'}
+                    ? 'Usunięto'
+                    : 'Przywrócono'}
                   <span>
                     {' '}
                     Społeczność{' '}
@@ -254,8 +254,8 @@ export class Modlog extends Component<any, ModlogState> {
                 <>
                   <span>
                     {(i.data as ModBanFromCommunity).banned
-                      ? 'Zbanowany '
-                      : 'Odbanowany '}{' '}
+                      ? 'Zbanowano '
+                      : 'Odbanowano '}{' '}
                   </span>
                   <span>
                     <Link
@@ -292,8 +292,8 @@ export class Modlog extends Component<any, ModlogState> {
                 <>
                   <span>
                     {(i.data as ModAddCommunity).removed
-                      ? 'Usunięty '
-                      : 'Oznaczony '}{' '}
+                      ? 'Usunięto '
+                      : 'Oznaczono '}{' '}
                   </span>
                   <span>
                     <Link
@@ -315,7 +315,7 @@ export class Modlog extends Component<any, ModlogState> {
               {i.type_ == 'banned' && (
                 <>
                   <span>
-                    {(i.data as ModBan).banned ? 'Zbanowany ' : 'Odbanowany '}{' '}
+                    {(i.data as ModBan).banned ? 'Zbanowano ' : 'Odbanowano '}{' '}
                   </span>
                   <span>
                     <Link to={`/u/${(i.data as ModBan).other_user_name}`}>
@@ -337,7 +337,7 @@ export class Modlog extends Component<any, ModlogState> {
               {i.type_ == 'added' && (
                 <>
                   <span>
-                    {(i.data as ModAdd).removed ? 'Usunięty ' : 'Oznaczony '}{' '}
+                    {(i.data as ModAdd).removed ? 'Usunięto ' : 'Oznaczono '}{' '}
                   </span>
                   <span>
                     <Link to={`/u/${(i.data as ModAdd).other_user_name}`}>
