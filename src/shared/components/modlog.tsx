@@ -149,7 +149,9 @@ export class Modlog extends Component<any, ModlogState> {
             <td>
               {i.type_ == 'removed_posts' && (
                 <>
-                  {(i.data as ModRemovePost).removed ? 'Removed' : 'Restored'}
+                  {(i.data as ModRemovePost).removed
+                    ? 'Usunięty'
+                    : 'Przywrócony'}
                   <span>
                     {' '}
                     Post{' '}
@@ -159,13 +161,15 @@ export class Modlog extends Component<any, ModlogState> {
                   </span>
                   <div>
                     {(i.data as ModRemovePost).reason &&
-                      ` reason: ${(i.data as ModRemovePost).reason}`}
+                      ` powód: ${(i.data as ModRemovePost).reason}`}
                   </div>
                 </>
               )}
               {i.type_ == 'locked_posts' && (
                 <>
-                  {(i.data as ModLockPost).locked ? 'Locked' : 'Unlocked'}
+                  {(i.data as ModLockPost).locked
+                    ? 'Zablokowany'
+                    : 'Odblokowany'}
                   <span>
                     {' '}
                     Post{' '}
@@ -177,9 +181,7 @@ export class Modlog extends Component<any, ModlogState> {
               )}
               {i.type_ == 'stickied_posts' && (
                 <>
-                  {(i.data as ModStickyPost).stickied
-                    ? 'Stickied'
-                    : 'Unstickied'}
+                  {(i.data as ModStickyPost).stickied ? 'Przypięty' : 'Odpięty'}
                   <span>
                     {' '}
                     Post{' '}
@@ -192,11 +194,11 @@ export class Modlog extends Component<any, ModlogState> {
               {i.type_ == 'removed_comments' && (
                 <>
                   {(i.data as ModRemoveComment).removed
-                    ? 'Removed'
-                    : 'Restored'}
+                    ? 'Usunięty'
+                    : 'Przywrócony'}
                   <span>
                     {' '}
-                    Comment{' '}
+                    Komentarz{' '}
                     <Link
                       to={`/post/${
                         (i.data as ModRemoveComment).post_id
@@ -207,7 +209,7 @@ export class Modlog extends Component<any, ModlogState> {
                   </span>
                   <span>
                     {' '}
-                    by{' '}
+                    przez{' '}
                     <Link
                       to={`/u/${
                         (i.data as ModRemoveComment).comment_user_name
@@ -218,18 +220,18 @@ export class Modlog extends Component<any, ModlogState> {
                   </span>
                   <div>
                     {(i.data as ModRemoveComment).reason &&
-                      ` reason: ${(i.data as ModRemoveComment).reason}`}
+                      ` powód: ${(i.data as ModRemoveComment).reason}`}
                   </div>
                 </>
               )}
               {i.type_ == 'removed_communities' && (
                 <>
                   {(i.data as ModRemoveCommunity).removed
-                    ? 'Removed'
-                    : 'Restored'}
+                    ? 'Usunięta'
+                    : 'Przywrócona'}
                   <span>
                     {' '}
-                    Community{' '}
+                    Społeczność{' '}
                     <Link
                       to={`/c/${(i.data as ModRemoveCommunity).community_name}`}
                     >
@@ -238,11 +240,11 @@ export class Modlog extends Component<any, ModlogState> {
                   </span>
                   <div>
                     {(i.data as ModRemoveCommunity).reason &&
-                      ` reason: ${(i.data as ModRemoveCommunity).reason}`}
+                      ` powód: ${(i.data as ModRemoveCommunity).reason}`}
                   </div>
                   <div>
                     {(i.data as ModRemoveCommunity).expires &&
-                      ` expires: ${moment
+                      ` wygasa: ${moment
                         .utc((i.data as ModRemoveCommunity).expires)
                         .fromNow()}`}
                   </div>
@@ -252,8 +254,8 @@ export class Modlog extends Component<any, ModlogState> {
                 <>
                   <span>
                     {(i.data as ModBanFromCommunity).banned
-                      ? 'Banned '
-                      : 'Unbanned '}{' '}
+                      ? 'Zbanowany '
+                      : 'Odbanowany '}{' '}
                   </span>
                   <span>
                     <Link
@@ -264,7 +266,7 @@ export class Modlog extends Component<any, ModlogState> {
                       {(i.data as ModBanFromCommunity).other_user_name}
                     </Link>
                   </span>
-                  <span> from the community </span>
+                  <span> ze społeczności </span>
                   <span>
                     <Link
                       to={`/c/${
@@ -276,11 +278,11 @@ export class Modlog extends Component<any, ModlogState> {
                   </span>
                   <div>
                     {(i.data as ModBanFromCommunity).reason &&
-                      ` reason: ${(i.data as ModBanFromCommunity).reason}`}
+                      ` powód: ${(i.data as ModBanFromCommunity).reason}`}
                   </div>
                   <div>
                     {(i.data as ModBanFromCommunity).expires &&
-                      ` expires: ${moment
+                      ` wygasa: ${moment
                         .utc((i.data as ModBanFromCommunity).expires)
                         .fromNow()}`}
                   </div>
@@ -290,8 +292,8 @@ export class Modlog extends Component<any, ModlogState> {
                 <>
                   <span>
                     {(i.data as ModAddCommunity).removed
-                      ? 'Removed '
-                      : 'Appointed '}{' '}
+                      ? 'Usunięty '
+                      : 'Oznaczony '}{' '}
                   </span>
                   <span>
                     <Link
@@ -300,7 +302,7 @@ export class Modlog extends Component<any, ModlogState> {
                       {(i.data as ModAddCommunity).other_user_name}
                     </Link>
                   </span>
-                  <span> as a mod to the community </span>
+                  <span> jako moderator społeczności </span>
                   <span>
                     <Link
                       to={`/c/${(i.data as ModAddCommunity).community_name}`}
@@ -313,7 +315,7 @@ export class Modlog extends Component<any, ModlogState> {
               {i.type_ == 'banned' && (
                 <>
                   <span>
-                    {(i.data as ModBan).banned ? 'Banned ' : 'Unbanned '}{' '}
+                    {(i.data as ModBan).banned ? 'Zbanowany ' : 'Odbanowany '}{' '}
                   </span>
                   <span>
                     <Link to={`/u/${(i.data as ModBan).other_user_name}`}>
@@ -322,11 +324,11 @@ export class Modlog extends Component<any, ModlogState> {
                   </span>
                   <div>
                     {(i.data as ModBan).reason &&
-                      ` reason: ${(i.data as ModBan).reason}`}
+                      ` powód: ${(i.data as ModBan).reason}`}
                   </div>
                   <div>
                     {(i.data as ModBan).expires &&
-                      ` expires: ${moment
+                      ` wygasa: ${moment
                         .utc((i.data as ModBan).expires)
                         .fromNow()}`}
                   </div>
@@ -335,14 +337,14 @@ export class Modlog extends Component<any, ModlogState> {
               {i.type_ == 'added' && (
                 <>
                   <span>
-                    {(i.data as ModAdd).removed ? 'Removed ' : 'Appointed '}{' '}
+                    {(i.data as ModAdd).removed ? 'Usunięty ' : 'Oznaczony '}{' '}
                   </span>
                   <span>
                     <Link to={`/u/${(i.data as ModAdd).other_user_name}`}>
                       {(i.data as ModAdd).other_user_name}
                     </Link>
                   </span>
-                  <span> as an admin </span>
+                  <span> jako administrator </span>
                 </>
               )}
             </td>
