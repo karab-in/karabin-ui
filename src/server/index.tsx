@@ -116,7 +116,9 @@ server.get('/*', async (req, res) => {
                </div>
              </noscript>
             
-             <div id='root' class="${site.my_user.theme}">${root}</div>
+             <div id='root' class="${
+               site.my_user ? site.my_user.theme : 'karabin'
+             }">${root}</div>
              <script defer src='/static/js/client.js'></script>
            </body>
          </html>
