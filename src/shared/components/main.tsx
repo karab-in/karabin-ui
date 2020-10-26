@@ -37,7 +37,6 @@ import { CommunityLink } from './community-link';
 import { BannerIconHeader } from './banner-icon-header';
 import {
   wsJsonToRes,
-  repoUrl,
   mdToHtml,
   fetchLimit,
   toast,
@@ -292,9 +291,11 @@ export class Main extends Component<any, MainState> {
               <div class="card-body">{this.sidebar()}</div>
             </div>
 
-            <div class="card border-secondary">
-              <div class="card-body">{this.landing()}</div>
-            </div>
+            {/*
+              <div class="card border-secondary">
+                <div class="card-body">{this.landing()}</div>
+              </div>
+            */}
           </div>
         )}
       </div>

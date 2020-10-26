@@ -1,7 +1,6 @@
 import { Component } from 'inferno';
 import { Link } from 'inferno-router';
 import { i18n } from '../i18next';
-import { repoUrl } from '../utils';
 import { GetSiteResponse } from 'karabin-js-client';
 
 interface FooterProps {
@@ -49,7 +48,6 @@ export class Footer extends Component<FooterProps, FooterState> {
                 {i18n.t('docs')}
               </a>
             </li>
-            */}
             <li class="nav-item">
               <Link
                 className="nav-link"
@@ -65,6 +63,11 @@ export class Footer extends Component<FooterProps, FooterState> {
             <li class="nav-item">
               <a className="nav-link" href={repoUrl}>
                 {i18n.t('code')}
+              </a>
+            </li>
+            <li class="nav-item">
+              <a className="nav-link" href={joinLemmyUrl}>
+                {i18n.t('join_lemmy')}
               </a>
             </li>
             */}
