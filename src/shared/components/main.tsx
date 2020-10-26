@@ -528,6 +528,7 @@ export class Main extends Component<any, MainState> {
         </p>
       </div>
     );
+    */
   }
 
   posts() {
@@ -548,7 +549,6 @@ export class Main extends Component<any, MainState> {
         )}
       </div>
     );
-  */
   }
 
   listings() {
