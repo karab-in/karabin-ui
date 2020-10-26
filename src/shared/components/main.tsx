@@ -495,6 +495,7 @@ export class Main extends Component<any, MainState> {
   }
 
   landing() {
+    /*
     return (
       <div class="">
         <h5 class="text-center mb-4">
@@ -547,6 +548,7 @@ export class Main extends Component<any, MainState> {
         )}
       </div>
     );
+  */
   }
 
   listings() {
