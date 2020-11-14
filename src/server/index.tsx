@@ -1,4 +1,3 @@
-// import cookieParser = require('cookie-parser');
 import serialize from 'serialize-javascript';
 import express from 'express';
 import { StaticRouter } from 'inferno-router';
@@ -6,14 +5,16 @@ import { renderToString } from 'inferno-server';
 import { matchPath } from 'inferno-router';
 import path from 'path';
 import { App } from '../shared/components/app';
-import { IsoData } from '../shared/interfaces';
+import { InitialFetchRequest, IsoData } from '../shared/interfaces';
 import { routes } from '../shared/routes';
 import IsomorphicCookie from 'isomorphic-cookie';
-import { lemmyHttp, setAuth } from '../shared/utils';
-import { GetSiteForm, GetSiteResponse } from 'karabin-js-client';
+import { setAuth } from '../shared/utils';
+import { GetSiteForm, LemmyHttp } from 'karabin-js-client';
 import process from 'process';
 import { Helmet } from 'inferno-helmet';
 import { initializeSite } from '../shared/initialize';
+import { httpUri } from '../shared/env';
+import { IncomingHttpHeaders } from 'http';
 
 const server = express();
 const port = 1234;
@@ -34,15 +35,29 @@ server.get('/*', async (req, res) => {
 
   let promises: Promise<any>[] = [];
 
-  let siteData = lemmyHttp.getSite(getSiteForm);
-  promises.push(siteData);
+  let headers = setForwardedHeaders(req.headers);
+
+  let initialFetchReq: InitialFetchRequest = {
+    client: new LemmyHttp(httpUri, headers),
+    auth,
+    path: req.path,
+  };
+
+  // Get site data first
+  let site = await initialFetchReq.client.getSite(getSiteForm);
+  initializeSite(site);
+
   if (activeRoute.fetchInitialData) {
-    promises.push(...activeRoute.fetchInitialData(auth, req.path));
+    promises.push(...activeRoute.fetchInitialData(initialFetchReq));
   }
 
-  let resolver = await Promise.all(promises);
-  let site: GetSiteResponse = resolver[0];
-  let routeData = resolver.slice(1, resolver.length);
+  let routeData = await Promise.all(promises);
+
+  // Redirect to the 404 if there's an API error
+  if (routeData[0] && routeData[0].error) {
+    let errCode = routeData[0].error;
+    return res.redirect(`/404?err=${errCode}`);
+  }
 
   let acceptLang = req.headers['accept-language']
     ? req.headers['accept-language'].split(',')[0]
@@ -59,8 +74,6 @@ server.get('/*', async (req, res) => {
     routeData,
     lang,
   };
-
-  initializeSite(site);
 
   const wrapper = (
     <StaticRouter location={req.url} context={isoData}>
@@ -128,16 +141,25 @@ server.get('/*', async (req, res) => {
          </html>
 `);
 });
-let Server = server.listen(port, () => {
+
+server.listen(port, () => {
   console.log(`http://localhost:${port}`);
 });
 
-/**
- * Used to restart server by fuseBox
- */
-export async function shutdown() {
-  Server.close();
-  Server = undefined;
+function setForwardedHeaders(
+  headers: IncomingHttpHeaders
+): { [key: string]: string } {
+  let out = {
+    host: headers.host,
+  };
+  if (headers['x-real-ip']) {
+    out['x-real-ip'] = headers['x-real-ip'];
+  }
+  if (headers['x-forwarded-for']) {
+    out['x-forwarded-for'] = headers['x-forwarded-for'];
+  }
+
+  return out;
 }
 
 process.on('SIGINT', () => {
