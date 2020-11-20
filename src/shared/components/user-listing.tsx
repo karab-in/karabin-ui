@@ -21,6 +21,7 @@ interface UserListingProps {
   useApubName?: boolean;
   muted?: boolean;
   hideAvatar?: boolean;
+  showApubName?: boolean;
 }
 
 export class UserListing extends Component<UserListingProps, any> {
@@ -47,12 +48,17 @@ export class UserListing extends Component<UserListingProps, any> {
       ? user.preferred_username
       : apubName;
 
+    if (this.props.showApubName && !local && user.preferred_username) {
+      displayName = `${displayName} (${apubName})`;
+    }
+
     return (
       <>
         <Link
           title={apubName}
           className={this.props.muted ? 'text-muted' : 'text-info'}
           to={link}
+          target={this.props.realLink ? '_blank' : ''}
         >
           {!this.props.hideAvatar && user.avatar && showAvatars() && (
             <PictrsImage src={user.avatar} icon />
