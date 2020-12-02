@@ -323,7 +323,7 @@ export class Main extends Component<any, MainState> {
         </h5>
         <ul class="list-inline">
           {this.state.trendingCommunities.map(community => (
-            <li class="list-inline-item">
+            <li class="list-inline-item d-inline">
               <CommunityLink community={community} />
             </li>
           ))}
@@ -345,7 +345,7 @@ export class Main extends Component<any, MainState> {
         </h5>
         <ul class="list-inline mb-0">
           {this.state.subscribedCommunities.map(community => (
-            <li class="list-inline-item">
+            <li class="list-inline-item d-inline">
               <CommunityLink
                 community={{
                   name: community.community_name,
@@ -595,6 +595,18 @@ export class Main extends Component<any, MainState> {
         {this.state.listingType == ListingType.All && (
           <a
             href={`/feeds/all.xml?sort=${this.state.sort}`}
+            target="_blank"
+            rel="noopener"
+            title="RSS"
+          >
+            <svg class="icon text-muted small">
+              <use xlinkHref="#icon-rss">#</use>
+            </svg>
+          </a>
+        )}
+        {this.state.listingType == ListingType.Local && (
+          <a
+            href={`/feeds/local.xml?sort=${this.state.sort}`}
             target="_blank"
             rel="noopener"
             title="RSS"
